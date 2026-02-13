@@ -10,6 +10,12 @@ This report covers hrev59262 through hrev59355.
 
 <!--more-->
 
+### Netlify changes pricing model
+
+Recently, Netlify, which hosts www.haiku-os.org, started switching to a [credit-based pricing plan](https://docs.netlify.com/manage/accounts-and-billing/billing/billing-for-credit-based-plans/credit-based-pricing-plans/). We're still on the "Open Source" plan, which gives us a lot of bandwidth for free, but initially the new credit-based version of the "Open Source" plan had too few credits for how much data we use every month. Additionally, there was a period in December where the site got absolutely slammed with bot traffic (probably LLM-related, or some other especially poorly-designed crawler, as most of the URLs it requested were nonsensical and just returned 404s). We made some changes to try and prevent this in the future, but we still incurred an overage charge for December.
+
+But after reaching out to Netlify Support with some questions about the overage charge, they actually wound up (without our asking for it!) reversing the charge and upping our monthly credit allotment, which now is more than sufficient for our monthly bandwidth. Thanks, Netlify!
+
 ### Applications
 
 PulkoMandy added some missing locking to the file panel constructor, fixing broken open/save panel appearances in various applications. He also improved the appearance of drag-bitmaps (for use in drag-and-drop) for files, though there's still more work to be done here.
